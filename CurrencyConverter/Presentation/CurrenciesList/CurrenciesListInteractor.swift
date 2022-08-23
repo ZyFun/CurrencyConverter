@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CurrenciesListBusinessLogic {
-    
+    func parse()
 }
 
 final class CurrenciesListInteractor {
@@ -16,9 +16,20 @@ final class CurrenciesListInteractor {
     // MARK: - Public properties
     
     weak var presenter: CurrenciesListPresentationLogic?
+    var requestSender: RequestSender?
 }
 
 // MARK: - CurrenciesListBusinessLogic
 extension CurrenciesListInteractor: CurrenciesListBusinessLogic {
-    
+    func parse() {
+        let requestConfig = RequestFactory.CBRCurrencyRequest.modelConfig()
+        requestSender?.send(config: requestConfig) { result in
+            switch result {
+            case .success(let(models, _, _)):
+                print(models)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }

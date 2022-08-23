@@ -30,6 +30,8 @@ final class CurrenciesListViewController: UIViewController {
         setup()
         
         dataSourceProvider?.currencies = CurrencyModel.getStubCurrency()
+        
+        presenter?.parse()
     }
 }
 

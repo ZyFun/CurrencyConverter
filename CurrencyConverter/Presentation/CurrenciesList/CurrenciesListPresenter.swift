@@ -12,7 +12,7 @@ protocol CurrenciesListPresentationLogic: AnyObject {
 }
 
 protocol CurrenciesListViewControllerOutput {
-    
+    func parse()
 }
 
 final class CurrenciesListPresenter {
@@ -33,5 +33,7 @@ extension CurrenciesListPresenter: CurrenciesListPresentationLogic {
 // MARK: - CurrenciesListViewControllerOutput
 
 extension CurrenciesListPresenter: CurrenciesListViewControllerOutput {
-    
+    func parse() {
+        interactor?.parse()
+    }
 }

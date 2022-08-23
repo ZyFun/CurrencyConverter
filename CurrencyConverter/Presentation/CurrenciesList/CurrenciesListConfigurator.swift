@@ -26,5 +26,8 @@ final class CurrenciesListConfigurator {
         )
         
         view.dataSourceProvider = dataSourceProvider
+        
+        let requestSender = RequestSender()
+        interactor.requestSender = requestSender
     }
 }
