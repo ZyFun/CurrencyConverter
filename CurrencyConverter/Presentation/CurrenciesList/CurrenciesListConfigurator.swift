@@ -20,5 +20,11 @@ final class CurrenciesListConfigurator {
         presenter.interactor = interactor
         presenter.router = router
         interactor.presenter = presenter
+        
+        let dataSourceProvider = CurrenciesListDataSourceProvider(
+            presenter: presenter
+        )
+        
+        view.dataSourceProvider = dataSourceProvider
     }
 }
