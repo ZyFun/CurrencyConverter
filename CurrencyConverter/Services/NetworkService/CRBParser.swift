@@ -15,14 +15,15 @@ protocol IParserProtocol {
 class CRBParser: XMLParser, IParserProtocol {
     typealias Model = CRBApiModel
     
-    var models: [Model] = []
-    
+    var models: [Model]?
     var currency = ""
     var charCode = ""
     var name = ""
     var value = ""
     
     func parse(data: Data) -> [Model]? {
+        models = []
+        
         let delegate = self
         let parser = XMLParser(data: data)
         parser.delegate = delegate
@@ -56,8 +57,7 @@ extension CRBParser: XMLParserDelegate {
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "Valute" {
             let model = Model(charCode: charCode, name: name, valueRub: value)
-            print(model)
-            models.append(model)
+            models?.append(model)
         }
     }
 }

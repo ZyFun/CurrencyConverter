@@ -161,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				2CED9B8628B51BA100B8C890 /* NetworkService */,
-				2CED9B8728B51BAC00B8C890 /* ParseService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -177,13 +176,6 @@
 				2CED9B9228B51F9500B8C890 /* RequestFactory.swift */,
 			);
 			path = NetworkService;
-			sourceTree = "<group>";
-		};
-		2CED9B8728B51BAC00B8C890 /* ParseService */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ParseService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
