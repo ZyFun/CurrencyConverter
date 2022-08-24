@@ -9,6 +9,7 @@ import Foundation
 
 protocol CurrenciesListPresentationLogic: AnyObject {
     func displayCurrencies(_ currencies: [CRBApiModel]?)
+    func showErrorAlertWith(_ error: NetworkError)
 }
 
 protocol CurrenciesListViewControllerOutput {
@@ -27,6 +28,10 @@ final class CurrenciesListPresenter {
 // MARK: - CurrenciesListPresentationLogic
 
 extension CurrenciesListPresenter: CurrenciesListPresentationLogic {
+    func showErrorAlertWith(_ error: NetworkError) {
+        view?.showErrorAlertWith(error)
+    }
+    
     func displayCurrencies(_ currencies: [CRBApiModel]?) {
         view?.displayCurrencies(currencies)
     }

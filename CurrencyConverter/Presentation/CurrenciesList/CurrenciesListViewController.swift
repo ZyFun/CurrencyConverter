@@ -9,6 +9,7 @@ import UIKit
 
 protocol CurrenciesListDisplayLogic: AnyObject {
     func displayCurrencies(_ currencies: [CRBApiModel]?)
+    func showErrorAlertWith(_ error: NetworkError)
 }
 
 final class CurrenciesListViewController: UIViewController {
@@ -79,6 +80,38 @@ extension CurrenciesListViewController: CurrenciesListDisplayLogic {
             self.dataSourceProvider?.currencies = currencies
             self.currenciesTableView.reloadData()
             self.activityIndicator.stopAnimating()
+        }
+    }
+    
+    func showErrorAlertWith(_ error: NetworkError) {
+        let message = error.rawValue
+        
+        let alert = UIAlertController(
+            title: "Error",
+            message: message,
+            preferredStyle: .alert
+        )
+        
+        let repeatButton = UIAlertAction(
+            title: "Повторить",
+            style: .default
+        ) { [weak self] _ in
+            self?.activityIndicator.startAnimating()
+            self?.presenter?.loadingData()
+        }
+        
+        let cancelButton = UIAlertAction(
+            title: "Отмена",
+            style: .destructive
+        ) { [weak self] _ in
+            self?.activityIndicator.stopAnimating()
+        }
+        
+        alert.addAction(repeatButton)
+        alert.addAction(cancelButton)
+        
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
         }
     }
 }
