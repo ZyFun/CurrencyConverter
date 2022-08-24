@@ -12,6 +12,7 @@ protocol CurrenciesListPresentationLogic: AnyObject {
 
 protocol CurrenciesListViewControllerOutput {
     func loadingData()
+    func routeToCalculator(with currency: CRBApiModel)
 }
 
 final class CurrenciesListPresenter {
@@ -38,7 +39,12 @@ extension CurrenciesListPresenter: CurrenciesListPresentationLogic {
 // MARK: - CurrenciesListViewControllerOutput
 
 extension CurrenciesListPresenter: CurrenciesListViewControllerOutput {
+    
     func loadingData() {
         interactor?.loadingData()
+    }
+    
+    func routeToCalculator(with currency: CRBApiModel) {
+        router?.routeTo(target: .calculator(currency))
     }
 }

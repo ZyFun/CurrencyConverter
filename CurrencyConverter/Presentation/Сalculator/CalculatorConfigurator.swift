@@ -8,13 +8,18 @@
 import UIKit
 
 final class CalculatorConfigurator {
-    func config(view: UIViewController, navigationController: UINavigationController?) {
+    func config(
+        view: UIViewController,
+        navigationController: UINavigationController?,
+        currentCurrency: CRBApiModel
+    ) {
         guard let view = view as? CalculatorViewController else { return }
         
         let presenter = CalculatorPresenter()
         let interactor = CalculatorInteractor()
         
         view.presenter = presenter
+        view.currentCurrency = currentCurrency
         presenter.view = view
         presenter.interactor = interactor
         interactor.presenter = presenter

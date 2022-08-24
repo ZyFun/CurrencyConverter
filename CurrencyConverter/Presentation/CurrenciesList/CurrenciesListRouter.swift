@@ -19,7 +19,7 @@ final class CurrenciesListRouter {
     }
     
     enum Targets {
-        
+        case calculator(CRBApiModel)
     }
 }
 
@@ -27,6 +27,20 @@ final class CurrenciesListRouter {
 
 extension CurrenciesListRouter: CurrenciesListRoutingLogic {
     func routeTo(target: Targets) {
-        
+        switch target {
+        case .calculator(let currentCurrency):
+            let calculatorVC = CalculatorViewController(
+                nibName: String(describing: CalculatorViewController.self),
+                bundle: nil
+            )
+            
+            CalculatorConfigurator().config(
+                view: calculatorVC,
+                navigationController: navigationController,
+                currentCurrency: currentCurrency
+            )
+            
+            navigationController?.pushViewController(calculatorVC, animated: true)
+        }
     }
 }

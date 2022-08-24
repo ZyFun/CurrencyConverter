@@ -74,5 +74,12 @@ extension CurrenciesListDataSourceProvider {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let currency = currencies?[indexPath.row] else {
+            print("Выбранная валюта не доступна")
+            return
+        }
+        
+        presenter?.routeToCalculator(with: currency)
     }
 }
