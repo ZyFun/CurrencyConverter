@@ -27,6 +27,14 @@ class CurrencyCell: UITableViewCell {
         return label
     }()
     
+    private let nominalLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 12)
+        label.textColor = .systemGray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 17)
@@ -42,6 +50,7 @@ class CurrencyCell: UITableViewCell {
         return label
     }()
     
+    
     // MARK: - Initializer
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -50,6 +59,7 @@ class CurrencyCell: UITableViewCell {
         addSubview(nameLabel)
         addSubview(charCodeLabel)
         addSubview(valueLabel)
+        addSubview(nominalLabel)
         
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
@@ -61,7 +71,10 @@ class CurrencyCell: UITableViewCell {
             
             valueLabel.topAnchor.constraint(equalTo: charCodeLabel.topAnchor),
             valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            valueLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            valueLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            
+            nominalLabel.centerYAnchor.constraint(equalTo: valueLabel.centerYAnchor),
+            nominalLabel.trailingAnchor.constraint(equalTo: valueLabel.leadingAnchor, constant: -3)
             
         ])
         
@@ -79,6 +92,8 @@ class CurrencyCell: UITableViewCell {
         nameLabel.text = ""
         charCodeLabel.text = ""
         valueLabel.text = ""
+        nominalLabel.text = ""
+        
     }
 }
 
@@ -87,11 +102,13 @@ class CurrencyCell: UITableViewCell {
 extension CurrencyCell {
     func config(
         charCode: String?,
+        nominal: String?,
         name: String?,
         value: String?
     ) {
         charCodeLabel.text = charCode
         nameLabel.text = name
         valueLabel.text = (value ?? "0.0") + " ₽"
+        nominalLabel.text = (nominal ?? "nil") + " = "
     }
 }

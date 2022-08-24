@@ -59,6 +59,7 @@ extension CurrenciesListDataSourceProvider {
         
         cell.config(
             charCode: currency.charCode,
+            nominal: currency.nominal,
             name: currency.name,
             value: currency.valueRub
         )
