@@ -18,6 +18,7 @@ class CRBParser: XMLParser, IParserProtocol {
     var models: [Model]?
     var currency = ""
     var charCode = ""
+    var nominal = ""
     var name = ""
     var value = ""
     
@@ -42,21 +43,30 @@ extension CRBParser: XMLParserDelegate {
 
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         let data = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-
-        if (!data.isEmpty) {
-            if currency == "Name" {
-                name = data
-            } else if currency == "Value" {
-                value = data
-            } else if currency == "CharCode" {
-                charCode = data
-            }
+        
+        switch currency {
+        case "CharCode":
+            charCode = data
+        case "Nominal":
+            nominal = data
+        case "Name":
+            name = data
+        case "Value":
+            value = data
+        default:
+            break
         }
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "Valute" {
-            let model = Model(charCode: charCode, name: name, valueRub: value)
+            let model = Model(
+                charCode: charCode,
+                nominal: nominal,
+                name: name,
+                valueRub: value
+            )
+            
             models?.append(model)
         }
     }

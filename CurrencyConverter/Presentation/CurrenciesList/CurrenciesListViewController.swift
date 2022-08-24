@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CurrenciesListDisplayLogic: AnyObject {
-    
+    func displayCurrencies(_ currencies: [CRBApiModel]?)
 }
 
 final class CurrenciesListViewController: UIViewController {
@@ -21,6 +21,7 @@ final class CurrenciesListViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var currenciesTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - LifeCycle
     
@@ -29,9 +30,8 @@ final class CurrenciesListViewController: UIViewController {
         
         setup()
         
-        dataSourceProvider?.currencies = CurrencyModel.getStubCurrency()
-        
-        presenter?.parse()
+        activityIndicator.startAnimating()
+        presenter?.loadingData()
     }
 }
 
@@ -41,6 +41,7 @@ private extension CurrenciesListViewController {
     func setup() {
         setupNavigationBar()
         setupTableView()
+        setupActivityIndicator()
     }
     
     func setupNavigationBar() {
@@ -63,11 +64,21 @@ private extension CurrenciesListViewController {
             forCellReuseIdentifier: CurrencyCell.identifier
         )
     }
+    
+    func setupActivityIndicator() {
+        activityIndicator.hidesWhenStopped = true
+    }
 }
 
 
 // MARK: - CurrenciesListDisplayLogic
 
 extension CurrenciesListViewController: CurrenciesListDisplayLogic {
-    
+    func displayCurrencies(_ currencies: [CRBApiModel]?) {
+        DispatchQueue.main.async {
+            self.dataSourceProvider?.currencies = currencies
+            self.currenciesTableView.reloadData()
+            self.activityIndicator.stopAnimating()
+        }
+    }
 }

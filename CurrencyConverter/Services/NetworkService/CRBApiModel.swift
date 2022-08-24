@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct CRBApiModel: Codable {
+struct CRBApiModel {
     let charCode: String?
+    let nominal: String?
     let name: String?
     let valueRub: String?
 }

@@ -54,6 +54,7 @@ class CurrencyCell: UITableViewCell {
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
             charCodeLabel.topAnchor.constraint(greaterThanOrEqualTo: nameLabel.bottomAnchor, constant: 5),
             charCodeLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
@@ -77,7 +78,7 @@ class CurrencyCell: UITableViewCell {
         
         nameLabel.text = ""
         charCodeLabel.text = ""
-        valueLabel.text = String(format: "%.2f", 0)
+        valueLabel.text = ""
     }
 }
 
@@ -87,10 +88,10 @@ extension CurrencyCell {
     func config(
         charCode: String?,
         name: String?,
-        value: Double?
+        value: String?
     ) {
         charCodeLabel.text = charCode
         nameLabel.text = name
-        valueLabel.text = String(format: "%.2f", value ?? 0) + " ₽"
+        valueLabel.text = (value ?? "0.0") + " ₽"
     }
 }

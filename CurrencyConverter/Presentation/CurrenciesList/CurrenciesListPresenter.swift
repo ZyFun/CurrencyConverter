@@ -8,11 +8,11 @@
 import Foundation
 
 protocol CurrenciesListPresentationLogic: AnyObject {
-    
+    func displayCurrencies(_ currencies: [CRBApiModel]?)
 }
 
 protocol CurrenciesListViewControllerOutput {
-    func parse()
+    func loadingData()
 }
 
 final class CurrenciesListPresenter {
@@ -27,13 +27,15 @@ final class CurrenciesListPresenter {
 // MARK: - CurrenciesListPresentationLogic
 
 extension CurrenciesListPresenter: CurrenciesListPresentationLogic {
-    
+    func displayCurrencies(_ currencies: [CRBApiModel]?) {
+        view?.displayCurrencies(currencies)
+    }
 }
 
 // MARK: - CurrenciesListViewControllerOutput
 
 extension CurrenciesListPresenter: CurrenciesListViewControllerOutput {
-    func parse() {
-        interactor?.parse()
+    func loadingData() {
+        interactor?.loadingData()
     }
 }

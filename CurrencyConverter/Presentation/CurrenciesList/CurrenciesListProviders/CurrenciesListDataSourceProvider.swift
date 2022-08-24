@@ -10,14 +10,20 @@ import UIKit
 protocol ICurrenciesListDataSourceProvider: UITableViewDelegate,
                                             UITableViewDataSource {
     
-    var currencies: [CurrencyModel]? { get set }
+    var currencies: [CRBApiModel]? { get set }
 }
 
 final class CurrenciesListDataSourceProvider: NSObject, ICurrenciesListDataSourceProvider {
     
-    var currencies: [CurrencyModel]?
+    // MARK: - Public properties
+    
+    var currencies: [CRBApiModel]?
+    
+    // MARK: - Private properties
     
     private var presenter: CurrenciesListViewControllerOutput?
+    
+    // MARK: - Initializer
     
     init(presenter: CurrenciesListViewControllerOutput?) {
         self.presenter = presenter
