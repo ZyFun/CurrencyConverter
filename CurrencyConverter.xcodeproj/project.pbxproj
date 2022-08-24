@@ -19,6 +19,11 @@
 		2C68631928B4E2ED00DAC01B /* CurrenciesListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68631828B4E2ED00DAC01B /* CurrenciesListConfigurator.swift */; };
 		2C68631B28B4E5F100DAC01B /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68631A28B4E5F100DAC01B /* CurrencyCell.swift */; };
 		2C68632528B4EC4F00DAC01B /* CurrenciesListDataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68632428B4EC4F00DAC01B /* CurrenciesListDataSourceProvider.swift */; };
+		2C9FC26F28B6591100F2A49B /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FC26D28B6591100F2A49B /* CalculatorViewController.swift */; };
+		2C9FC27028B6591100F2A49B /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9FC26E28B6591100F2A49B /* CalculatorViewController.xib */; };
+		2C9FC27228B6598500F2A49B /* CalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FC27128B6598500F2A49B /* CalculatorPresenter.swift */; };
+		2C9FC27428B6599200F2A49B /* CalculatorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FC27328B6599200F2A49B /* CalculatorInteractor.swift */; };
+		2C9FC27828B659AC00F2A49B /* CalculatorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FC27728B659AC00F2A49B /* CalculatorConfigurator.swift */; };
 		2CED9B8928B51C7300B8C890 /* CRBApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED9B8828B51C7300B8C890 /* CRBApiModel.swift */; };
 		2CED9B8B28B51D0A00B8C890 /* CRBParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED9B8A28B51D0A00B8C890 /* CRBParser.swift */; };
 		2CED9B8D28B51DF000B8C890 /* CRBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED9B8C28B51DF000B8C890 /* CRBRequest.swift */; };
@@ -42,6 +47,11 @@
 		2C68631828B4E2ED00DAC01B /* CurrenciesListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesListConfigurator.swift; sourceTree = "<group>"; };
 		2C68631A28B4E5F100DAC01B /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
 		2C68632428B4EC4F00DAC01B /* CurrenciesListDataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesListDataSourceProvider.swift; sourceTree = "<group>"; };
+		2C9FC26D28B6591100F2A49B /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		2C9FC26E28B6591100F2A49B /* CalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorViewController.xib; sourceTree = "<group>"; };
+		2C9FC27128B6598500F2A49B /* CalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPresenter.swift; sourceTree = "<group>"; };
+		2C9FC27328B6599200F2A49B /* CalculatorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorInteractor.swift; sourceTree = "<group>"; };
+		2C9FC27728B659AC00F2A49B /* CalculatorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorConfigurator.swift; sourceTree = "<group>"; };
 		2CED9B8828B51C7300B8C890 /* CRBApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRBApiModel.swift; sourceTree = "<group>"; };
 		2CED9B8A28B51D0A00B8C890 /* CRBParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRBParser.swift; sourceTree = "<group>"; };
 		2CED9B8C28B51DF000B8C890 /* CRBRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRBRequest.swift; sourceTree = "<group>"; };
@@ -111,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				2C68631128B4DFCE00DAC01B /* CurrenciesList */,
+				2C9FC26C28B6589300F2A49B /* Сalculator */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -144,6 +155,18 @@
 				2C68632428B4EC4F00DAC01B /* CurrenciesListDataSourceProvider.swift */,
 			);
 			path = CurrenciesListProviders;
+			sourceTree = "<group>";
+		};
+		2C9FC26C28B6589300F2A49B /* Сalculator */ = {
+			isa = PBXGroup;
+			children = (
+				2C9FC26E28B6591100F2A49B /* CalculatorViewController.xib */,
+				2C9FC26D28B6591100F2A49B /* CalculatorViewController.swift */,
+				2C9FC27128B6598500F2A49B /* CalculatorPresenter.swift */,
+				2C9FC27328B6599200F2A49B /* CalculatorInteractor.swift */,
+				2C9FC27728B659AC00F2A49B /* CalculatorConfigurator.swift */,
+			);
+			path = "Сalculator";
 			sourceTree = "<group>";
 		};
 		2CED9B8528B51B8D00B8C890 /* Services */ = {
@@ -227,6 +250,7 @@
 			files = (
 				2C6862FD28B4DCBE00DAC01B /* LaunchScreen.storyboard in Resources */,
 				2C6862FA28B4DCBE00DAC01B /* Assets.xcassets in Resources */,
+				2C9FC27028B6591100F2A49B /* CalculatorViewController.xib in Resources */,
 				2C68631028B4DF9200DAC01B /* CurrenciesListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,16 +264,20 @@
 			files = (
 				2CED9B9328B51F9500B8C890 /* RequestFactory.swift in Sources */,
 				2CED9B8928B51C7300B8C890 /* CRBApiModel.swift in Sources */,
+				2C9FC26F28B6591100F2A49B /* CalculatorViewController.swift in Sources */,
 				2CED9B8D28B51DF000B8C890 /* CRBRequest.swift in Sources */,
+				2C9FC27828B659AC00F2A49B /* CalculatorConfigurator.swift in Sources */,
 				2C68631B28B4E5F100DAC01B /* CurrencyCell.swift in Sources */,
 				2C68630F28B4DF9200DAC01B /* CurrenciesListViewController.swift in Sources */,
 				2C6862F828B4DCBD00DAC01B /* CurrencyConverter.xcdatamodeld in Sources */,
 				2C6862EE28B4DCBD00DAC01B /* AppDelegate.swift in Sources */,
 				2C68632528B4EC4F00DAC01B /* CurrenciesListDataSourceProvider.swift in Sources */,
 				2CED9B8F28B51E5B00B8C890 /* CRBRequestService.swift in Sources */,
+				2C9FC27428B6599200F2A49B /* CalculatorInteractor.swift in Sources */,
 				2C68631328B4E0F300DAC01B /* CurrenciesListPresenter.swift in Sources */,
 				2CED9B9128B51EA500B8C890 /* NetworkError.swift in Sources */,
 				2C68631928B4E2ED00DAC01B /* CurrenciesListConfigurator.swift in Sources */,
+				2C9FC27228B6598500F2A49B /* CalculatorPresenter.swift in Sources */,
 				2C68631528B4E24D00DAC01B /* CurrenciesListInteractor.swift in Sources */,
 				2C68631728B4E2E200DAC01B /* CurrenciesListRouter.swift in Sources */,
 				2CED9B8B28B51D0A00B8C890 /* CRBParser.swift in Sources */,
