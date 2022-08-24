@@ -24,6 +24,7 @@
 		2C9FC27228B6598500F2A49B /* CalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FC27128B6598500F2A49B /* CalculatorPresenter.swift */; };
 		2C9FC27428B6599200F2A49B /* CalculatorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FC27328B6599200F2A49B /* CalculatorInteractor.swift */; };
 		2C9FC27828B659AC00F2A49B /* CalculatorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FC27728B659AC00F2A49B /* CalculatorConfigurator.swift */; };
+		2C9FC27C28B6908300F2A49B /* String+NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9FC27B28B6908300F2A49B /* String+NumberFormatter.swift */; };
 		2CED9B8928B51C7300B8C890 /* CRBApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED9B8828B51C7300B8C890 /* CRBApiModel.swift */; };
 		2CED9B8B28B51D0A00B8C890 /* CRBParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED9B8A28B51D0A00B8C890 /* CRBParser.swift */; };
 		2CED9B8D28B51DF000B8C890 /* CRBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED9B8C28B51DF000B8C890 /* CRBRequest.swift */; };
@@ -52,6 +53,7 @@
 		2C9FC27128B6598500F2A49B /* CalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPresenter.swift; sourceTree = "<group>"; };
 		2C9FC27328B6599200F2A49B /* CalculatorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorInteractor.swift; sourceTree = "<group>"; };
 		2C9FC27728B659AC00F2A49B /* CalculatorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorConfigurator.swift; sourceTree = "<group>"; };
+		2C9FC27B28B6908300F2A49B /* String+NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NumberFormatter.swift"; sourceTree = "<group>"; };
 		2CED9B8828B51C7300B8C890 /* CRBApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRBApiModel.swift; sourceTree = "<group>"; };
 		2CED9B8A28B51D0A00B8C890 /* CRBParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRBParser.swift; sourceTree = "<group>"; };
 		2CED9B8C28B51DF000B8C890 /* CRBRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRBRequest.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				2C6862FE28B4DCBF00DAC01B /* Info.plist */,
 				2C6862F628B4DCBD00DAC01B /* CurrencyConverter.xcdatamodeld */,
 				2C68630428B4DE7700DAC01B /* Default */,
+				2C9FC27928B6903F00F2A49B /* Common */,
 				2CED9B8528B51B8D00B8C890 /* Services */,
 				2C68630628B4DEC000DAC01B /* Presentation */,
 			);
@@ -167,6 +170,22 @@
 				2C9FC27728B659AC00F2A49B /* CalculatorConfigurator.swift */,
 			);
 			path = "Сalculator";
+			sourceTree = "<group>";
+		};
+		2C9FC27928B6903F00F2A49B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2C9FC27A28B6904C00F2A49B /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2C9FC27A28B6904C00F2A49B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C9FC27B28B6908300F2A49B /* String+NumberFormatter.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		2CED9B8528B51B8D00B8C890 /* Services */ = {
@@ -266,6 +285,7 @@
 				2CED9B8928B51C7300B8C890 /* CRBApiModel.swift in Sources */,
 				2C9FC26F28B6591100F2A49B /* CalculatorViewController.swift in Sources */,
 				2CED9B8D28B51DF000B8C890 /* CRBRequest.swift in Sources */,
+				2C9FC27C28B6908300F2A49B /* String+NumberFormatter.swift in Sources */,
 				2C9FC27828B659AC00F2A49B /* CalculatorConfigurator.swift in Sources */,
 				2C68631B28B4E5F100DAC01B /* CurrencyCell.swift in Sources */,
 				2C68630F28B4DF9200DAC01B /* CurrenciesListViewController.swift in Sources */,
