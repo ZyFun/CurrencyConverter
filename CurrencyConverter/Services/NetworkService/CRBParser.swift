@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol IParserProtocol {
+protocol IParser {
     associatedtype Model
     func parse(data: Data) -> [Model]?
 }
 
-class CRBParser: XMLParser, IParserProtocol {
+class CRBParser: XMLParser, IParser {
     typealias Model = CRBApiModel
     
     var models: [Model]?
@@ -36,8 +36,13 @@ class CRBParser: XMLParser, IParserProtocol {
 
 extension CRBParser: XMLParserDelegate {
     
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-        
+    func parser(
+        _ parser: XMLParser,
+        didStartElement elementName: String,
+        namespaceURI: String?,
+        qualifiedName qName: String?,
+        attributes attributeDict: [String : String] = [:]
+    ) {
         currency = elementName
     }
 
@@ -58,7 +63,12 @@ extension CRBParser: XMLParserDelegate {
         }
     }
     
-    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+    func parser(
+        _ parser: XMLParser,
+        didEndElement elementName: String,
+        namespaceURI: String?,
+        qualifiedName qName: String?
+    ) {
         if elementName == "Valute" {
             let model = Model(
                 charCode: charCode,

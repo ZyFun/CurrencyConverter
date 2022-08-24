@@ -14,20 +14,15 @@ final class CurrenciesListConfigurator {
         let presenter = CurrenciesListPresenter()
         let interactor = CurrenciesListInteractor()
         let router = CurrenciesListRouter(withNavigationController: navigationController)
+        let dataSourceProvider = CurrenciesListDataSourceProvider(presenter: presenter)
+        let requestSender = RequestSender()
         
         view.presenter = presenter
+        view.dataSourceProvider = dataSourceProvider
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
         interactor.presenter = presenter
-        
-        let dataSourceProvider = CurrenciesListDataSourceProvider(
-            presenter: presenter
-        )
-        
-        view.dataSourceProvider = dataSourceProvider
-        
-        let requestSender = RequestSender()
         interactor.requestSender = requestSender
     }
 }

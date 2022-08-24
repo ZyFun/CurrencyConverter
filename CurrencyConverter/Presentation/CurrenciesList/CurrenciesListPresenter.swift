@@ -5,8 +5,6 @@
 //  Created by Дмитрий Данилин on 23.08.2022.
 //
 
-import Foundation
-
 protocol CurrenciesListPresentationLogic: AnyObject {
     func displayCurrencies(_ currencies: [CRBApiModel]?)
     func showErrorAlertWith(_ error: NetworkError)

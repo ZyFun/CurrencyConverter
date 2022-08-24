@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol IRequestProtocol {
+protocol IRequest {
     var urlRequest: URLRequest? { get }
 }
 
-struct CRBRequest: IRequestProtocol {
+struct CRBRequest: IRequest {
     var urlRequest: URLRequest?
     var urlString: String
     

@@ -31,6 +31,7 @@ final class CurrenciesListViewController: UIViewController {
         
         setup()
         
+        // TODO: Сделать кеширование, и загружать данные раз в день. Всё остальное время доставать из памяти без обращения к сети
         activityIndicator.startAnimating()
         presenter?.loadingData()
     }
@@ -49,7 +50,7 @@ private extension CurrenciesListViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
         
-        title = "Валюты"
+        title = "Выбор валюты"
     }
     
     func setupTableView() {

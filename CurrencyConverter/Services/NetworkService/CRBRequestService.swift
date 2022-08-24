@@ -7,24 +7,24 @@
 
 import Foundation
 
-protocol IRequestSenderProtocol {
+protocol IRequestSender {
     func send<Parser>(
         config: RequestConfig<Parser>,
         completionHandler: @escaping (Result<([Parser.Model]?, Data?, URLResponse?), NetworkError>) -> Void
     )
 }
 
-struct RequestConfig<Parser> where Parser: IParserProtocol {
-    let request: IRequestProtocol
+struct RequestConfig<Parser> where Parser: IParser {
+    let request: IRequest
     let parser: Parser?
 }
 
-class RequestSender: IRequestSenderProtocol {
+class RequestSender: IRequestSender {
     
     func send<Parser>(
         config: RequestConfig<Parser>,
         completionHandler: @escaping (Result<([Parser.Model]?, Data?, URLResponse?), NetworkError>) -> Void
-    ) where Parser: IParserProtocol {
+    ) where Parser: IParser {
         guard let urlRequest = config.request.urlRequest else {
             completionHandler(.failure(.invalidURL))
             return
