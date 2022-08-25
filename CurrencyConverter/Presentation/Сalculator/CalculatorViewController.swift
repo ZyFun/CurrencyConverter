@@ -49,6 +49,7 @@ final class CalculatorViewController: UIViewController {
 private extension CalculatorViewController {
     func setup() {
         setupNavigationBar()
+        setupTextFields()
     }
     
     func setupNavigationBar() {
@@ -56,6 +57,10 @@ private extension CalculatorViewController {
         title = currentCurrency?.name
     }
     
+    func setupTextFields() {
+        amountCurrencyTF.delegate = self
+        amountRubTF.delegate = self
+    }
     
     func convertToRub() {
         guard let nominal = currentCurrency?.nominal?.doubleValue else { return }
@@ -89,6 +94,33 @@ private extension CalculatorViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate
+
+extension CalculatorViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard let currentText = textField.text else { return false }
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        if updatedText.count <= 11 && string != "." && string != "," {
+            return true
+        } else {
+            if string == "." || string == "," {
+                let countDots = currentText.components(separatedBy: [".", ","]).count - 1
+                if countDots == 0 && updatedText.count > 1 {
+                    return true
+                } else {
+                    return false
+                }
+            } else {
+                return false
+            }
+        }
+    }
+}
 
 // MARK: - CalculatorDisplayLogic
 
