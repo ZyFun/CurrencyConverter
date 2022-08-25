@@ -10,11 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalculatorViewController" customModule="CurrencyConverter" customModuleProvider="target">
             <connections>
+                <outlet property="amountCurrencyTF" destination="TO7-KK-wvU" id="Vei-Ub-noe"/>
+                <outlet property="amountRubTF" destination="UAq-am-GtT" id="XGZ-p5-qi3"/>
                 <outlet property="firstCharCodeLabel" destination="yhC-bj-Pmv" id="YOd-ih-GsV"/>
-                <outlet property="firstSumTF" destination="TO7-KK-wvU" id="Vei-Ub-noe"/>
                 <outlet property="resultLabel" destination="9T2-PA-SZq" id="ojW-zQ-pVa"/>
                 <outlet property="secondCharCodeLabel" destination="RIr-hS-5Oq" id="DZS-Pd-5XJ"/>
-                <outlet property="secondSumTF" destination="UAq-am-GtT" id="XGZ-p5-qi3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
