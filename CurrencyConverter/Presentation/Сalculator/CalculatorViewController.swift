@@ -25,8 +25,6 @@ final class CalculatorViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var firstSumTF: UITextField!
     @IBOutlet weak var secondSumTF: UITextField!
-    @IBOutlet weak var shiftButton: UIButton!
-    @IBOutlet weak var calculationButton: UIButton!
     
     // MARK: - LifeCycle
     
@@ -34,6 +32,13 @@ final class CalculatorViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
+    
+    // MARK: - Actions
+    
+    @IBAction func valueFirstTFDidChanged() {
+    }
+    
+    @IBAction func valueSecondTFDidChanged() {
     }
 }
 
