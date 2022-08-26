@@ -8,7 +8,8 @@
 import UIKit
 
 protocol CalculatorDisplayLogic: AnyObject {
-    
+    func displayFirstData(name: String, nominal: String, valueRub: String, charCode: String)
+    func displayConversion(currency: CurrencyType, _ result: String, and fullResult: String)
 }
 
 final class CalculatorViewController: UIViewController {
@@ -16,12 +17,11 @@ final class CalculatorViewController: UIViewController {
     // MARK: - Public properties
     
     var presenter: CalculatorViewControllerOutput?
-    var currentCurrency: CRBApiModel?
 
     // MARK: - Outlets
     
-    @IBOutlet weak var firstCharCodeLabel: UILabel!
-    @IBOutlet weak var secondCharCodeLabel: UILabel!
+    @IBOutlet weak var currencyCharCodeLabel: UILabel!
+    @IBOutlet weak var rubCharCodeLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var amountCurrencyTF: UITextField!
     @IBOutlet weak var amountRubTF: UITextField!
@@ -32,15 +32,25 @@ final class CalculatorViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
+        presenter?.fetchFirstData()
+    }
     
     // MARK: - Actions
     
-    @IBAction func valueFirstTFDidChanged() {
-        convertToRub()
+    @IBAction func valueCurrencyTFDidChanged() {
+        presenter?.convert(
+            to: .rub,
+            amountCurrency: amountCurrencyTF.text,
+            amountRub: amountRubTF.text
+        )
     }
     
-    @IBAction func valueSecondTFDidChanged() {
-        convertToCurrency()
+    @IBAction func valueRubTFDidChanged() {
+        presenter?.convert(
+            to: .other,
+            amountCurrency: amountCurrencyTF.text,
+            amountRub: amountRubTF.text
+        )
     }
 }
 
@@ -54,43 +64,11 @@ private extension CalculatorViewController {
     
     func setupNavigationBar() {
         navigationItem.largeTitleDisplayMode = .never
-        title = currentCurrency?.name
     }
     
     func setupTextFields() {
         amountCurrencyTF.delegate = self
         amountRubTF.delegate = self
-    }
-    
-    func convertToRub() {
-        guard let nominal = currentCurrency?.nominal?.doubleValue else { return }
-        guard var rubValue = currentCurrency?.valueRub?.doubleValue else { return }
-        guard let amountCurrency = amountCurrencyTF.text?.doubleValue else { return }
-        
-        if nominal != 1 {
-            rubValue /= nominal
-        }
-        
-        let conversionResult = amountCurrency * rubValue
-        
-        amountRubTF.text = String(format: "%.4f", conversionResult)
-        resultLabel.text = String(format: "Сумма: %.4f RUB", conversionResult)
-    }
-    
-    func convertToCurrency() {
-        guard let charCode = currentCurrency?.charCode else { return }
-        guard let nominal = currentCurrency?.nominal?.doubleValue else { return }
-        guard var rubValue = currentCurrency?.valueRub?.doubleValue else { return }
-        guard let amountRub = amountRubTF.text?.doubleValue else { return }
-        
-        if nominal != 1 {
-            rubValue /= nominal
-        }
-        
-        let conversionResult = 1 / rubValue * amountRub
-        
-        amountCurrencyTF.text = String(format: "%.4f", conversionResult)
-        resultLabel.text = String(format: "Сумма: %.4f \(charCode)", conversionResult)
     }
 }
 
@@ -125,6 +103,24 @@ extension CalculatorViewController: UITextFieldDelegate {
 // MARK: - CalculatorDisplayLogic
 
 extension CalculatorViewController: CalculatorDisplayLogic {
+    func displayConversion(currency: CurrencyType, _ result: String, and fullResult: String) {
+        resultLabel.isHidden = false
+        
+        switch currency {
+        case .rub:
+            amountRubTF.text = result
+        case .other:
+            amountCurrencyTF.text = result
+        }
+        
+        resultLabel.text = fullResult
+    }
     
+    func displayFirstData(name: String, nominal: String, valueRub: String, charCode: String) {
+        title = name
+        amountCurrencyTF.text = nominal
+        amountRubTF.text = valueRub
+        currencyCharCodeLabel.text = charCode
+        resultLabel.isHidden = true
+    }
 }
-

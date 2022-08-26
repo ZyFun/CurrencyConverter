@@ -19,9 +19,9 @@ final class CalculatorConfigurator {
         let interactor = CalculatorInteractor()
         
         view.presenter = presenter
-        view.currentCurrency = currentCurrency
         presenter.view = view
         presenter.interactor = interactor
         interactor.presenter = presenter
+        interactor.currentCurrency = currentCurrency
     }
 }
