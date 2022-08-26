@@ -1,15 +1,14 @@
 //
-//  CurrencyConverterTests.swift
+//  CalculatorInteractorTests.swift
 //  CurrencyConverterTests
 //
 //  Created by Дмитрий Данилин on 26.08.2022.
 //
 
 import XCTest
-
 @testable import CurrencyConverter
 
-final class DisclaimerTests: XCTestCase {
+final class CalculatorInteractorTests: XCTestCase {
     
     private var presenter = CalculatorPresenterMock()
     private var interactor: CalculatorInteractor!
