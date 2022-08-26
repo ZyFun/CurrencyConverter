@@ -66,12 +66,12 @@ class CurrencyCell: UITableViewCell {
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            charCodeLabel.topAnchor.constraint(greaterThanOrEqualTo: nameLabel.bottomAnchor, constant: 5),
+            charCodeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
             charCodeLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
+            charCodeLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             
             valueLabel.topAnchor.constraint(equalTo: charCodeLabel.topAnchor),
             valueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            valueLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             
             nominalLabel.centerYAnchor.constraint(equalTo: valueLabel.centerYAnchor),
             nominalLabel.trailingAnchor.constraint(equalTo: valueLabel.leadingAnchor, constant: -3)
