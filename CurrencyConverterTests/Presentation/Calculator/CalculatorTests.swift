@@ -129,11 +129,7 @@ final class DisclaimerTests: XCTestCase {
         
         // Then
         XCTAssertNotNil(interactor.currentCurrency?.valueRub)
-        if let param = param {
-            XCTAssertTrue(param.result.isInfinite)
-        } else {
-            XCTAssert(false)
-        }
+        XCTAssertTrue(param!.result.isInfinite)
     }
     
     func testFetchFirstData() {

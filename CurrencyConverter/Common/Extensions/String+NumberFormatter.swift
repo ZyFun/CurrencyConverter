@@ -10,7 +10,7 @@ import Foundation
 extension String {
     static let numberFormatter = NumberFormatter()
     
-    var doubleValue: Double? {
+    var doubleValue: Double {
         String.numberFormatter.decimalSeparator = "."
         if let result = String.numberFormatter.number(from: self) {
             return result.doubleValue
@@ -20,6 +20,6 @@ extension String {
                 return result.doubleValue
             }
         }
-        return nil
+        return 0
     }
 }
