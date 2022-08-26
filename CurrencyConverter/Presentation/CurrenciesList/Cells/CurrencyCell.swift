@@ -93,7 +93,7 @@ class CurrencyCell: UITableViewCell {
         charCodeLabel.text = ""
         valueLabel.text = ""
         nominalLabel.text = ""
-        
+        nameLabel.textColor = .label
     }
 }
 
@@ -104,11 +104,16 @@ extension CurrencyCell {
         charCode: String?,
         nominal: String?,
         name: String?,
-        value: String?
+        value: String?,
+        isFavorite: Bool
     ) {
         charCodeLabel.text = charCode
         nameLabel.text = name
         valueLabel.text = (value ?? "0.0") + " ₽"
         nominalLabel.text = (nominal ?? "nil") + " = "
+        
+        if isFavorite {
+            nameLabel.textColor = .orange
+        }
     }
 }

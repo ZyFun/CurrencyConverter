@@ -21,12 +21,17 @@ final class CurrenciesListDataSourceProvider: NSObject, ICurrenciesListDataSourc
     
     // MARK: - Private properties
     
-    private var presenter: CurrenciesListViewControllerOutput?
+    private var presenter: CurrenciesListViewControllerOutput
+    private var userDefaultService: IUserDefaultsService
     
     // MARK: - Initializer
     
-    init(presenter: CurrenciesListViewControllerOutput?) {
+    init(
+        presenter: CurrenciesListViewControllerOutput,
+        userDefaultService: IUserDefaultsService
+    ) {
         self.presenter = presenter
+        self.userDefaultService = userDefaultService
         super.init()
     }
 }
@@ -34,6 +39,41 @@ final class CurrenciesListDataSourceProvider: NSObject, ICurrenciesListDataSourc
 // MARK: - Table view data source
 
 extension CurrenciesListDataSourceProvider {
+    
+    func tableView(
+        _ tableView: UITableView,
+        trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+    ) -> UISwipeActionsConfiguration? {
+        
+        guard let currency = currencies?[indexPath.row] else { return nil }
+        guard let charCode = currency.charCode else { return nil }
+        let isFavorite = userDefaultService.loadFavoriteFor(charCode)
+        
+        let favoriteAction = UIContextualAction(
+            style: .normal,
+            title: "Favorite"
+        ) { [weak self] _, _, isDone in
+            guard let self = self else { return }
+            
+            if isFavorite {
+                self.userDefaultService.set(false, for: charCode)
+            } else {
+                self.userDefaultService.set(true, for: charCode)
+            }
+            
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+            
+            isDone(true)
+        }
+        
+        if isFavorite {
+            favoriteAction.backgroundColor = .gray
+        } else {
+            favoriteAction.backgroundColor = .orange
+        }
+        
+        return UISwipeActionsConfiguration(actions: [favoriteAction])
+    }
     
     func tableView(
         _ tableView: UITableView,
@@ -61,7 +101,8 @@ extension CurrenciesListDataSourceProvider {
             charCode: currency.charCode,
             nominal: currency.nominal,
             name: currency.name,
-            value: currency.valueRub
+            value: currency.valueRub,
+            isFavorite: userDefaultService.loadFavoriteFor(currency.charCode ?? "")
         )
         
         return cell
@@ -80,6 +121,6 @@ extension CurrenciesListDataSourceProvider {
             return
         }
         
-        presenter?.routeToCalculator(with: currency)
+        presenter.routeToCalculator(with: currency)
     }
 }
