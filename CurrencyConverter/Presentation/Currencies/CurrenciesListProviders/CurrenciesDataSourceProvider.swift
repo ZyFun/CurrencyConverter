@@ -45,11 +45,10 @@ extension CurrenciesDataSourceProvider {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        if favoriteCurrencies != nil {
-            return favoriteCurrencies?.count ?? 0
-        } else {
-            return currencies?.count ?? 0
-        }
+        
+        favoriteCurrencies != nil
+        ? favoriteCurrencies?.count ?? 0
+        : currencies?.count ?? 0
     }
     
     func tableView(
@@ -63,13 +62,9 @@ extension CurrenciesDataSourceProvider {
             return UITableViewCell()
         }
         
-        var currency: CRBApiModel?
-        
-        if favoriteCurrencies != nil {
-            currency = favoriteCurrencies?[indexPath.row]
-        } else {
-            currency = currencies?[indexPath.row]
-        }
+        let currency = favoriteCurrencies != nil
+        ? favoriteCurrencies?[indexPath.row]
+        : currencies?[indexPath.row]
         
         guard let currency = currency else { return UITableViewCell() }
         
@@ -104,13 +99,10 @@ extension CurrenciesDataSourceProvider {
         _ tableView: UITableView,
         trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
     ) -> UISwipeActionsConfiguration? {
-        let currency: CRBApiModel?
         
-        if favoriteCurrencies != nil {
-            currency = favoriteCurrencies?[indexPath.row]
-        } else {
-            currency = currencies?[indexPath.row]
-        }
+        let currency = favoriteCurrencies != nil
+        ? favoriteCurrencies?[indexPath.row]
+        : currencies?[indexPath.row]
         
         guard let charCode = currency?.charCode else { return nil }
         let isFavorite = userDefaultService.loadFavoriteFor(charCode)
@@ -137,11 +129,7 @@ extension CurrenciesDataSourceProvider {
             isDone(true)
         }
         
-        if isFavorite {
-            favoriteAction.backgroundColor = .gray
-        } else {
-            favoriteAction.backgroundColor = .orange
-        }
+        favoriteAction.backgroundColor = isFavorite ? .gray : .orange
         
         return UISwipeActionsConfiguration(actions: [favoriteAction])
     }
