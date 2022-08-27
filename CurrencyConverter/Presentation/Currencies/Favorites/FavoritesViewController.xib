@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoritesViewController" customModule="CurrencyConverter" customModuleProvider="target">
             <connections>
+                <outlet property="emptyFavoritesLabel" destination="pVl-OB-xRq" id="vHC-U5-6LA"/>
                 <outlet property="favoriteTableView" destination="JaE-rN-e2T" id="egT-NK-Mij"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,10 +24,18 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="У вас нет избранных валют" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVl-OB-xRq">
+                    <rect key="frame" x="98.5" y="437.5" width="217.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.53333333329999999" green="0.54901960780000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="pVl-OB-xRq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="5Gs-Xn-2vQ"/>
+                <constraint firstItem="pVl-OB-xRq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9d2-Ne-7vg"/>
                 <constraint firstItem="JaE-rN-e2T" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="LgE-ao-Ynd"/>
                 <constraint firstItem="JaE-rN-e2T" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hVF-nv-cNj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JaE-rN-e2T" secondAttribute="bottom" id="jIP-i0-zWI"/>

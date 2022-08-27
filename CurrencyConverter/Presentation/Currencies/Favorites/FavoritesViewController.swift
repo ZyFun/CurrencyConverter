@@ -21,6 +21,7 @@ final class FavoritesViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var favoriteTableView: UITableView!
+    @IBOutlet weak var emptyFavoritesLabel: UILabel!
     
     // MARK: - LifeCycle
     
@@ -74,5 +75,6 @@ private extension FavoritesViewController {
 extension FavoritesViewController: FavoritesDisplayLogic {
     func displayFavorite(_ currencies: [CRBApiModel]) {
         dataSourceProvider?.favoriteCurrencies = currencies
+        emptyFavoritesLabel.isHidden = !currencies.isEmpty
     }
 }
