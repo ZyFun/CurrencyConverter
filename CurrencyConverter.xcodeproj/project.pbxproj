@@ -35,6 +35,8 @@
 		2CA613E528BA2E08000D1A62 /* FavoritesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA613E428BA2E08000D1A62 /* FavoritesConfigurator.swift */; };
 		2CC4F35C28BAB2340017810A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2CC4F35B28BAB2340017810A /* README.md */; };
 		2CC4F35F28BAB3060017810A /* Demo000.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2CC4F35E28BAB3060017810A /* Demo000.gif */; };
+		2CC4F36328BAB7E00017810A /* FavoritesPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4F36228BAB7E00017810A /* FavoritesPresenterMock.swift */; };
+		2CC4F36528BAB8280017810A /* FavoritesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4F36428BAB8280017810A /* FavoritesInteractorTests.swift */; };
 		2CED9B8928B51C7300B8C890 /* CRBApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED9B8828B51C7300B8C890 /* CRBApiModel.swift */; };
 		2CED9B8B28B51D0A00B8C890 /* CRBParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED9B8A28B51D0A00B8C890 /* CRBParser.swift */; };
 		2CED9B8D28B51DF000B8C890 /* CRBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED9B8C28B51DF000B8C890 /* CRBRequest.swift */; };
@@ -85,6 +87,8 @@
 		2CA613E428BA2E08000D1A62 /* FavoritesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesConfigurator.swift; sourceTree = "<group>"; };
 		2CC4F35B28BAB2340017810A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2CC4F35E28BAB3060017810A /* Demo000.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Demo000.gif; sourceTree = "<group>"; };
+		2CC4F36228BAB7E00017810A /* FavoritesPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenterMock.swift; sourceTree = "<group>"; };
+		2CC4F36428BAB8280017810A /* FavoritesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractorTests.swift; sourceTree = "<group>"; };
 		2CED9B8828B51C7300B8C890 /* CRBApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRBApiModel.swift; sourceTree = "<group>"; };
 		2CED9B8A28B51D0A00B8C890 /* CRBParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRBParser.swift; sourceTree = "<group>"; };
 		2CED9B8C28B51DF000B8C890 /* CRBRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRBRequest.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 		2C6AD3D428B94C7700CEB542 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				2CC4F36028BAB7A80017810A /* Favorites */,
 				2C6AD3D528B94C8000CEB542 /* Calculator */,
 			);
 			path = Presentation;
@@ -290,6 +295,23 @@
 				2CC4F35E28BAB3060017810A /* Demo000.gif */,
 			);
 			path = Demo;
+			sourceTree = "<group>";
+		};
+		2CC4F36028BAB7A80017810A /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				2CC4F36128BAB7B00017810A /* Mock */,
+				2CC4F36428BAB8280017810A /* FavoritesInteractorTests.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		2CC4F36128BAB7B00017810A /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				2CC4F36228BAB7E00017810A /* FavoritesPresenterMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		2CED9B8528B51B8D00B8C890 /* Services */ = {
@@ -451,7 +473,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC4F36328BAB7E00017810A /* FavoritesPresenterMock.swift in Sources */,
 				2C6AD3CE28B94C5800CEB542 /* CalculatorInteractorTests.swift in Sources */,
+				2CC4F36528BAB8280017810A /* FavoritesInteractorTests.swift in Sources */,
 				2C6AD3DB28B94F0D00CEB542 /* CalculatorPresenterMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
