@@ -17,7 +17,12 @@ final class CurrenciesListViewController: UIViewController {
     // MARK: - Public properties
     
     var presenter: CurrenciesListViewControllerOutput?
-    var dataSourceProvider: ICurrenciesListDataSourceProvider?
+    var dataSourceProvider: ICurrenciesDataSourceProvider?
+    
+    // MARK: - Private properties
+    
+    /// Используется для передачи данных на экран Favorites
+    private var currencies: [CRBApiModel]?
 
     // MARK: - Outlets
     
@@ -25,6 +30,13 @@ final class CurrenciesListViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - LifeCycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Использую для обновления ячеек, после возврата с экрана избранного
+        currenciesTableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +63,27 @@ private extension CurrenciesListViewController {
         navigationItem.largeTitleDisplayMode = .always
         
         title = "Выбор валюты"
+        
+        setupBarButtons()
+    }
+    
+    func setupBarButtons() {
+        createFavoriteButton()
+    }
+    
+    func createFavoriteButton() {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        button.tintColor = .orange
+        button.addTarget(self, action: #selector(favoriteBarButtonPressed), for: .touchUpInside)
+        
+        let barButton = UIBarButtonItem(customView: button)
+        
+        navigationItem.rightBarButtonItem = barButton
+    }
+    
+    @objc func favoriteBarButtonPressed() {
+        presenter?.routeToFavorite(with: currencies, dataSourceProvider)
     }
     
     func setupTableView() {
@@ -77,6 +110,8 @@ private extension CurrenciesListViewController {
 
 extension CurrenciesListViewController: CurrenciesListDisplayLogic {
     func displayCurrencies(_ currencies: [CRBApiModel]?) {
+        self.currencies = currencies
+        
         DispatchQueue.main.async {
             self.dataSourceProvider?.currencies = currencies
             self.currenciesTableView.reloadData()

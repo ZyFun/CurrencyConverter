@@ -13,8 +13,11 @@ protocol IUserDefaultsService {
 }
 
 final class UserDefaultsService: IUserDefaultsService {
+    static let shared = UserDefaultsService()
     
     private let userDefaults = UserDefaults()
+    
+    private init(){}
     
     func set(_ isFavorite: Bool, for currencyCode: String) {
         DispatchQueue.global().async {

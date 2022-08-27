@@ -14,9 +14,9 @@ final class CurrenciesListConfigurator {
         let presenter = CurrenciesListPresenter()
         let interactor = CurrenciesListInteractor()
         let router = CurrenciesListRouter(withNavigationController: navigationController)
-        let dataSourceProvider = CurrenciesListDataSourceProvider(
+        let dataSourceProvider = CurrenciesDataSourceProvider(
             presenter: presenter,
-            userDefaultService: UserDefaultsService()
+            userDefaultService: UserDefaultsService.shared
         )
         let requestSender = RequestSender()
         

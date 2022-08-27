@@ -13,6 +13,10 @@ protocol CurrenciesListPresentationLogic: AnyObject {
 protocol CurrenciesListViewControllerOutput {
     func loadingData()
     func routeToCalculator(with currency: CRBApiModel)
+    func routeToFavorite(
+        with currencies: [CRBApiModel]?,
+        _ dataSourceProvider: ICurrenciesDataSourceProvider?
+    )
 }
 
 final class CurrenciesListPresenter {
@@ -46,5 +50,12 @@ extension CurrenciesListPresenter: CurrenciesListViewControllerOutput {
     
     func routeToCalculator(with currency: CRBApiModel) {
         router?.routeTo(target: .calculator(currency))
+    }
+    
+    func routeToFavorite(
+        with currencies: [CRBApiModel]?,
+        _ dataSourceProvider: ICurrenciesDataSourceProvider?
+    ) {
+        router?.routeTo(target: .favorite(dataSourceProvider, currencies))
     }
 }

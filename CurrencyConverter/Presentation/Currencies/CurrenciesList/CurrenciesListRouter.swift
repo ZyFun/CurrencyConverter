@@ -20,6 +20,7 @@ final class CurrenciesListRouter {
     
     enum Targets {
         case calculator(CRBApiModel)
+        case favorite(ICurrenciesDataSourceProvider?,[CRBApiModel]?)
     }
 }
 
@@ -41,6 +42,20 @@ extension CurrenciesListRouter: CurrenciesListRoutingLogic {
             )
             
             navigationController?.pushViewController(calculatorVC, animated: true)
+        case .favorite(let dataSourceProvider, let loadedCurrencies):
+            let favoritesVC = FavoritesViewController(
+                nibName: String(describing: FavoritesViewController.self),
+                bundle: nil
+            )
+            
+            FavoritesConfigurator().config(
+                view: favoritesVC,
+                navigationController: navigationController,
+                dataSourceProvider: dataSourceProvider,
+                loadedCurrencies: loadedCurrencies
+            )
+            
+            navigationController?.pushViewController(favoritesVC, animated: true)
         }
     }
 }

@@ -105,6 +105,7 @@ final class CalculatorInteractorTests: XCTestCase {
         interactor.currentCurrency = currencyModel
         interactor.convert(to: .other, amountCurrency: amountCurrency, amountRub: amountRub)
         let param = presenter.invokedPresentConversionParameters
+        
         // Then
         XCTAssertNotNil(interactor.currentCurrency?.nominal)
         XCTAssertEqual(param?.result, 0)
