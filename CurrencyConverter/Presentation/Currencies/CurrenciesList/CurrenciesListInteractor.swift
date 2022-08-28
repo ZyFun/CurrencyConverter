@@ -25,6 +25,7 @@ extension CurrenciesListInteractor: CurrenciesListBusinessLogic {
             switch result {
             case .success(let(models, _, _)):
                 self?.presenter?.displayCurrencies(models)
+                self?.presenter?.dismissSplashScreen()
             case .failure(let error):
                 Logger.error(error.rawValue)
                 self?.presenter?.showErrorAlertWith(error)

@@ -18,7 +18,7 @@
 
 ## Description
 Простой конвертер валют. На данном этапе есть возможность конвертации выбранной валюты в рубли, и обратно.
-Приложение состоит из трёх экранов: главный экран выбора валюты, экран калькулятора, экран избранного.
+Приложение состоит из четырех экранов: анимированный splash screen, главный экран выбора валюты, экран калькулятора, экран избранного.
 Конвертация происходит сразу, как только введен или удалён хотя бы 1 символ.
 Добавление в избранное осуществляется свайпом по ячейке в левую сторону.
 Переход в калькулятор возможен как с главного экрана, так и из избранного.
@@ -40,4 +40,5 @@
 Clone and run project in Xcode 13 or newer
 
 ## Demo
-![Demo 1](https://github.com/ZyFun/CurrencyConverter/blob/main/Demo/Demo000.gif?raw=true)
+<img src="https://github.com/ZyFun/CurrencyConverter/blob/main/Demo/Demo001.gif" width="300" height="650" />
+<img src="https://github.com/ZyFun/CurrencyConverter/blob/main/Demo/Demo000.gif?" width="300" height="650" />

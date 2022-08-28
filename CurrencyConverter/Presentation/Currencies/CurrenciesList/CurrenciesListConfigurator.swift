@@ -11,6 +11,7 @@ final class CurrenciesListConfigurator {
     func config(view: UIViewController, navigationController: UINavigationController?) {
         guard let view = view as? CurrenciesListViewController else { return }
         
+        let splashPresenter = SplashPresenter()
         let presenter = CurrenciesListPresenter()
         let interactor = CurrenciesListInteractor()
         let router = CurrenciesListRouter(withNavigationController: navigationController)
@@ -20,6 +21,7 @@ final class CurrenciesListConfigurator {
         )
         let requestSender = RequestSender()
         
+        view.splashPresenter = splashPresenter
         view.presenter = presenter
         view.dataSourceProvider = dataSourceProvider
         presenter.view = view

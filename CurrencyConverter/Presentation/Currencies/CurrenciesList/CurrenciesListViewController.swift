@@ -10,6 +10,7 @@ import UIKit
 protocol CurrenciesListDisplayLogic: AnyObject {
     func displayCurrencies(_ currencies: [CRBApiModel]?)
     func showErrorAlertWith(_ error: NetworkError)
+    func dismissSplashScreen()
 }
 
 final class CurrenciesListViewController: UIViewController {
@@ -18,6 +19,7 @@ final class CurrenciesListViewController: UIViewController {
     
     var presenter: CurrenciesListViewControllerOutput?
     var dataSourceProvider: ICurrenciesDataSourceProvider?
+    var splashPresenter: ISplashPresenter?
     
     // MARK: - Private properties
     
@@ -41,6 +43,7 @@ final class CurrenciesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        showSplashScreen()
         setup()
         getCurrencies()
     }
@@ -49,6 +52,11 @@ final class CurrenciesListViewController: UIViewController {
 // MARK: - Private methods
 
 private extension CurrenciesListViewController {
+    
+    func showSplashScreen() {
+        splashPresenter?.present()
+    }
+    
     func setup() {
         setupNavigationBar()
         setupTableView()
@@ -119,6 +127,14 @@ private extension CurrenciesListViewController {
 // MARK: - CurrenciesListDisplayLogic
 
 extension CurrenciesListViewController: CurrenciesListDisplayLogic {
+    func dismissSplashScreen() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.splashPresenter?.dismiss(completion: { [weak self] in
+                self?.splashPresenter = nil
+            })
+        }
+    }
+    
     func displayCurrencies(_ currencies: [CRBApiModel]?) {
         self.currencies = currencies
         dataSourceProvider?.currencies = currencies

@@ -45,6 +45,11 @@
 		2CED9B8F28B51E5B00B8C890 /* CRBRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED9B8E28B51E5B00B8C890 /* CRBRequestService.swift */; };
 		2CED9B9128B51EA500B8C890 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED9B9028B51EA500B8C890 /* NetworkError.swift */; };
 		2CED9B9328B51F9500B8C890 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED9B9228B51F9500B8C890 /* RequestFactory.swift */; };
+		2CF0FF7728BBBB6800D125C8 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF0FF7528BBBB6800D125C8 /* SplashViewController.swift */; };
+		2CF0FF7828BBBB6800D125C8 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CF0FF7628BBBB6800D125C8 /* SplashViewController.xib */; };
+		2CF0FF7A28BBBF1200D125C8 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF0FF7928BBBF1200D125C8 /* SplashPresenter.swift */; };
+		2CF0FF7C28BBCA9900D125C8 /* SplashAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF0FF7B28BBCA9900D125C8 /* SplashAnimator.swift */; };
+		2CF0FF7E28BBDEF400D125C8 /* Demo001.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2CF0FF7D28BBDEF400D125C8 /* Demo001.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +104,11 @@
 		2CED9B8E28B51E5B00B8C890 /* CRBRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRBRequestService.swift; sourceTree = "<group>"; };
 		2CED9B9028B51EA500B8C890 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		2CED9B9228B51F9500B8C890 /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		2CF0FF7528BBBB6800D125C8 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		2CF0FF7628BBBB6800D125C8 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		2CF0FF7928BBBF1200D125C8 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		2CF0FF7B28BBCA9900D125C8 /* SplashAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashAnimator.swift; sourceTree = "<group>"; };
+		2CF0FF7D28BBDEF400D125C8 /* Demo001.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Demo001.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +307,7 @@
 			children = (
 				2C68632328B4EC0100DAC01B /* CurrenciesProviders */,
 				2C68631C28B4E5F800DAC01B /* Cells */,
+				2CF0FF7328BBBB3F00D125C8 /* SplashScreen */,
 				2C68631128B4DFCE00DAC01B /* CurrenciesList */,
 				2CA613DB28BA2D6A000D1A62 /* Favorites */,
 			);
@@ -307,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				2CC4F35E28BAB3060017810A /* Demo000.gif */,
+				2CF0FF7D28BBDEF400D125C8 /* Demo001.gif */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -348,6 +360,17 @@
 				2CED9B9228B51F9500B8C890 /* RequestFactory.swift */,
 			);
 			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		2CF0FF7328BBBB3F00D125C8 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2CF0FF7628BBBB6800D125C8 /* SplashViewController.xib */,
+				2CF0FF7528BBBB6800D125C8 /* SplashViewController.swift */,
+				2CF0FF7928BBBF1200D125C8 /* SplashPresenter.swift */,
+				2CF0FF7B28BBCA9900D125C8 /* SplashAnimator.swift */,
+			);
+			path = SplashScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,9 +457,11 @@
 				2CC4F35C28BAB2340017810A /* README.md in Resources */,
 				2CC4F35F28BAB3060017810A /* Demo000.gif in Resources */,
 				2C6862FD28B4DCBE00DAC01B /* LaunchScreen.storyboard in Resources */,
+				2CF0FF7828BBBB6800D125C8 /* SplashViewController.xib in Resources */,
 				2C6862FA28B4DCBE00DAC01B /* Assets.xcassets in Resources */,
 				2C9FC27028B6591100F2A49B /* CalculatorViewController.xib in Resources */,
 				2CA613DF28BA2DB9000D1A62 /* FavoritesViewController.xib in Resources */,
+				2CF0FF7E28BBDEF400D125C8 /* Demo001.gif in Resources */,
 				2C68631028B4DF9200DAC01B /* CurrenciesListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +482,7 @@
 			files = (
 				2CA613DE28BA2DB9000D1A62 /* FavoritesViewController.swift in Sources */,
 				2CED9B9328B51F9500B8C890 /* RequestFactory.swift in Sources */,
+				2CF0FF7A28BBBF1200D125C8 /* SplashPresenter.swift in Sources */,
 				2CED9B8928B51C7300B8C890 /* CRBApiModel.swift in Sources */,
 				2C9FC26F28B6591100F2A49B /* CalculatorViewController.swift in Sources */,
 				2C06767028BB71F2008B9BDE /* Debug.swift in Sources */,
@@ -465,6 +491,7 @@
 				2C9FC27C28B6908300F2A49B /* String+NumberFormatter.swift in Sources */,
 				2C9FC27828B659AC00F2A49B /* CalculatorConfigurator.swift in Sources */,
 				2C68631B28B4E5F100DAC01B /* CurrencyCell.swift in Sources */,
+				2CF0FF7C28BBCA9900D125C8 /* SplashAnimator.swift in Sources */,
 				2CA613E528BA2E08000D1A62 /* FavoritesConfigurator.swift in Sources */,
 				2C68630F28B4DF9200DAC01B /* CurrenciesListViewController.swift in Sources */,
 				2C6862EE28B4DCBD00DAC01B /* AppDelegate.swift in Sources */,
@@ -474,6 +501,7 @@
 				2C9FC27428B6599200F2A49B /* CalculatorInteractor.swift in Sources */,
 				2C68631328B4E0F300DAC01B /* CurrenciesListPresenter.swift in Sources */,
 				2CED9B9128B51EA500B8C890 /* NetworkError.swift in Sources */,
+				2CF0FF7728BBBB6800D125C8 /* SplashViewController.swift in Sources */,
 				2C68631928B4E2ED00DAC01B /* CurrenciesListConfigurator.swift in Sources */,
 				2CA613E128BA2DE9000D1A62 /* FavoritesPresenter.swift in Sources */,
 				2C6AD3BE28B8EDCA00CEB542 /* CurrencyType.swift in Sources */,

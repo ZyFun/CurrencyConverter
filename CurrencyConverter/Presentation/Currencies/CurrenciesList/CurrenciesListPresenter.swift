@@ -8,6 +8,7 @@
 protocol CurrenciesListPresentationLogic: AnyObject {
     func displayCurrencies(_ currencies: [CRBApiModel]?)
     func showErrorAlertWith(_ error: NetworkError)
+    func dismissSplashScreen()
 }
 
 protocol CurrenciesListViewControllerOutput {
@@ -31,6 +32,10 @@ final class CurrenciesListPresenter {
 // MARK: - CurrenciesListPresentationLogic
 
 extension CurrenciesListPresenter: CurrenciesListPresentationLogic {
+    func dismissSplashScreen() {
+        view?.dismissSplashScreen()
+    }
+    
     func showErrorAlertWith(_ error: NetworkError) {
         view?.showErrorAlertWith(error)
     }
