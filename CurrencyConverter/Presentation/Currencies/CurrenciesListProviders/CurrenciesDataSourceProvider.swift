@@ -88,7 +88,7 @@ extension CurrenciesDataSourceProvider {
         tableView.deselectRow(at: indexPath, animated: true)
         
         guard let currency = currencies?[indexPath.row] else {
-            print("Выбранная валюта не доступна")
+            Logger.error("Выбранная валюта не доступна")
             return
         }
         

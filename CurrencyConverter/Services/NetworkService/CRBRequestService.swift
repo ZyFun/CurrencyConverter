@@ -32,7 +32,8 @@ class RequestSender: IRequestSender {
         
         let session = URLSession.shared
         let task = session.dataTask(with: urlRequest) { data, response, error in
-            if let _ = error {
+            if let error = error {
+                Logger.error(error.localizedDescription)
                 completionHandler(.failure(.networkError))
                 return
             }
@@ -49,6 +50,7 @@ class RequestSender: IRequestSender {
                 case 500...:
                     completionHandler(.failure(.serverError))
                 default:
+                    Logger.warning(statusCode.description)
                     completionHandler(.failure(.unownedError))
                 }
             }
