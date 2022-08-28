@@ -42,10 +42,7 @@ final class CurrenciesListViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
-        
-        // TODO: Сделать кеширование, и загружать данные раз в день. Всё остальное время доставать из памяти без обращения к сети
-        activityIndicator.startAnimating()
-        presenter?.loadingData()
+        getCurrencies()
     }
 }
 
@@ -56,6 +53,7 @@ private extension CurrenciesListViewController {
         setupNavigationBar()
         setupTableView()
         setupActivityIndicator()
+        setupRefreshControl()
     }
     
     func setupNavigationBar() {
@@ -103,6 +101,18 @@ private extension CurrenciesListViewController {
     func setupActivityIndicator() {
         activityIndicator.hidesWhenStopped = true
     }
+    
+    func setupRefreshControl() {
+        currenciesTableView.refreshControl = UIRefreshControl()
+        currenciesTableView.refreshControl?.attributedTitle = NSAttributedString(string: "Обновление курса валют")
+        currenciesTableView.refreshControl?.addTarget(self, action: #selector(getCurrencies), for: .valueChanged)
+    }
+    
+    // TODO: Сделать кеширование через CoreData с сохранением избранного там же, вместо userDefaults
+    @objc func getCurrencies() {
+        activityIndicator.startAnimating()
+        presenter?.loadingData()
+    }
 }
 
 
@@ -111,11 +121,14 @@ private extension CurrenciesListViewController {
 extension CurrenciesListViewController: CurrenciesListDisplayLogic {
     func displayCurrencies(_ currencies: [CRBApiModel]?) {
         self.currencies = currencies
+        dataSourceProvider?.currencies = currencies
         
         DispatchQueue.main.async {
-            self.dataSourceProvider?.currencies = currencies
             self.currenciesTableView.reloadData()
             self.activityIndicator.stopAnimating()
+            if self.currenciesTableView?.refreshControl != nil {
+                self.currenciesTableView?.refreshControl?.endRefreshing()
+            }
         }
     }
     
@@ -141,6 +154,7 @@ extension CurrenciesListViewController: CurrenciesListDisplayLogic {
             style: .destructive
         ) { [weak self] _ in
             self?.activityIndicator.stopAnimating()
+            self?.currenciesTableView.refreshControl?.endRefreshing()
         }
         
         alert.addAction(repeatButton)
