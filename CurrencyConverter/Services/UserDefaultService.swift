@@ -19,6 +19,7 @@ final class UserDefaultsService: IUserDefaultsService {
     
     private init(){}
     
+    #warning("Возможно я не так понял задачу, и нужно было сохранять именно как data, чтобы был доступ даже с отсутствующей сетью.")
     func set(_ isFavorite: Bool, for currencyCode: String) {
         DispatchQueue.global().async {
             self.userDefaults.set(isFavorite, forKey: currencyCode)
