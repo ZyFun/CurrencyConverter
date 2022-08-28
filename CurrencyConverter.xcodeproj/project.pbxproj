@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C06766C28BB682F008B9BDE /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C06766B28BB682F008B9BDE /* Debug.swift */; };
 		2C06766E28BB68B5008B9BDE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C06766D28BB68B5008B9BDE /* Logger.swift */; };
+		2C06767028BB71F2008B9BDE /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C06766F28BB71F2008B9BDE /* Debug.swift */; };
 		2C6862EE28B4DCBD00DAC01B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6862ED28B4DCBD00DAC01B /* AppDelegate.swift */; };
 		2C6862FA28B4DCBE00DAC01B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C6862F928B4DCBE00DAC01B /* Assets.xcassets */; };
 		2C6862FD28B4DCBE00DAC01B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C6862FB28B4DCBE00DAC01B /* LaunchScreen.storyboard */; };
@@ -58,8 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2C06766B28BB682F008B9BDE /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Debug.swift; path = ../../../../../../Desktop/Debug.swift; sourceTree = "<group>"; };
 		2C06766D28BB68B5008B9BDE /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		2C06766F28BB71F2008B9BDE /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		2C6862EA28B4DCBD00DAC01B /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6862ED28B4DCBD00DAC01B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C6862F928B4DCBE00DAC01B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		2C06766A28BB681F008B9BDE /* Supports */ = {
 			isa = PBXGroup;
 			children = (
-				2C06766B28BB682F008B9BDE /* Debug.swift */,
+				2C06766F28BB71F2008B9BDE /* Debug.swift */,
 				2C06766D28BB68B5008B9BDE /* Logger.swift */,
 			);
 			path = Supports;
@@ -208,12 +208,12 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		2C68632328B4EC0100DAC01B /* CurrenciesListProviders */ = {
+		2C68632328B4EC0100DAC01B /* CurrenciesProviders */ = {
 			isa = PBXGroup;
 			children = (
 				2C68632428B4EC4F00DAC01B /* CurrenciesDataSourceProvider.swift */,
 			);
-			path = CurrenciesListProviders;
+			path = CurrenciesProviders;
 			sourceTree = "<group>";
 		};
 		2C6AD3CC28B94C5800CEB542 /* CurrencyConverterTests */ = {
@@ -295,7 +295,7 @@
 		2CA613E628BA4FCF000D1A62 /* Currencies */ = {
 			isa = PBXGroup;
 			children = (
-				2C68632328B4EC0100DAC01B /* CurrenciesListProviders */,
+				2C68632328B4EC0100DAC01B /* CurrenciesProviders */,
 				2C68631C28B4E5F800DAC01B /* Cells */,
 				2C68631128B4DFCE00DAC01B /* CurrenciesList */,
 				2CA613DB28BA2D6A000D1A62 /* Favorites */,
@@ -459,6 +459,7 @@
 				2CED9B9328B51F9500B8C890 /* RequestFactory.swift in Sources */,
 				2CED9B8928B51C7300B8C890 /* CRBApiModel.swift in Sources */,
 				2C9FC26F28B6591100F2A49B /* CalculatorViewController.swift in Sources */,
+				2C06767028BB71F2008B9BDE /* Debug.swift in Sources */,
 				2C06766E28BB68B5008B9BDE /* Logger.swift in Sources */,
 				2CED9B8D28B51DF000B8C890 /* CRBRequest.swift in Sources */,
 				2C9FC27C28B6908300F2A49B /* String+NumberFormatter.swift in Sources */,
@@ -475,7 +476,6 @@
 				2CED9B9128B51EA500B8C890 /* NetworkError.swift in Sources */,
 				2C68631928B4E2ED00DAC01B /* CurrenciesListConfigurator.swift in Sources */,
 				2CA613E128BA2DE9000D1A62 /* FavoritesPresenter.swift in Sources */,
-				2C06766C28BB682F008B9BDE /* Debug.swift in Sources */,
 				2C6AD3BE28B8EDCA00CEB542 /* CurrencyType.swift in Sources */,
 				2C9FC27228B6598500F2A49B /* CalculatorPresenter.swift in Sources */,
 				2CA613E328BA2DFA000D1A62 /* FavoritesInteractor.swift in Sources */,
