@@ -50,6 +50,10 @@
 		2CF0FF7A28BBBF1200D125C8 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF0FF7928BBBF1200D125C8 /* SplashPresenter.swift */; };
 		2CF0FF7C28BBCA9900D125C8 /* SplashAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF0FF7B28BBCA9900D125C8 /* SplashAnimator.swift */; };
 		2CF0FF7E28BBDEF400D125C8 /* Demo001.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2CF0FF7D28BBDEF400D125C8 /* Demo001.gif */; };
+		2CF0FF8428BBF00700D125C8 /* Screenshot003.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF0FF8028BBF00600D125C8 /* Screenshot003.png */; };
+		2CF0FF8528BBF00700D125C8 /* Screenshot000.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF0FF8128BBF00700D125C8 /* Screenshot000.png */; };
+		2CF0FF8628BBF00700D125C8 /* Screenshot001.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF0FF8228BBF00700D125C8 /* Screenshot001.png */; };
+		2CF0FF8928BBF06200D125C8 /* Screenshot002.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CF0FF8828BBF06200D125C8 /* Screenshot002.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +113,10 @@
 		2CF0FF7928BBBF1200D125C8 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		2CF0FF7B28BBCA9900D125C8 /* SplashAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashAnimator.swift; sourceTree = "<group>"; };
 		2CF0FF7D28BBDEF400D125C8 /* Demo001.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Demo001.gif; sourceTree = "<group>"; };
+		2CF0FF8028BBF00600D125C8 /* Screenshot003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot003.png; sourceTree = "<group>"; };
+		2CF0FF8128BBF00700D125C8 /* Screenshot000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot000.png; sourceTree = "<group>"; };
+		2CF0FF8228BBF00700D125C8 /* Screenshot001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot001.png; sourceTree = "<group>"; };
+		2CF0FF8828BBF06200D125C8 /* Screenshot002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot002.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,7 @@
 				2CC4F35B28BAB2340017810A /* README.md */,
 				2C6862EC28B4DCBD00DAC01B /* CurrencyConverter */,
 				2C6AD3CC28B94C5800CEB542 /* CurrencyConverterTests */,
+				2CF0FF7F28BBEF3C00D125C8 /* Screenshots */,
 				2CC4F35D28BAB2BD0017810A /* Demo */,
 				2C6862EB28B4DCBD00DAC01B /* Products */,
 			);
@@ -373,6 +382,17 @@
 			path = SplashScreen;
 			sourceTree = "<group>";
 		};
+		2CF0FF7F28BBEF3C00D125C8 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				2CF0FF8128BBF00700D125C8 /* Screenshot000.png */,
+				2CF0FF8828BBF06200D125C8 /* Screenshot002.png */,
+				2CF0FF8228BBF00700D125C8 /* Screenshot001.png */,
+				2CF0FF8028BBF00600D125C8 /* Screenshot003.png */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -457,10 +477,14 @@
 				2CC4F35C28BAB2340017810A /* README.md in Resources */,
 				2CC4F35F28BAB3060017810A /* Demo000.gif in Resources */,
 				2C6862FD28B4DCBE00DAC01B /* LaunchScreen.storyboard in Resources */,
+				2CF0FF8628BBF00700D125C8 /* Screenshot001.png in Resources */,
+				2CF0FF8528BBF00700D125C8 /* Screenshot000.png in Resources */,
+				2CF0FF8928BBF06200D125C8 /* Screenshot002.png in Resources */,
 				2CF0FF7828BBBB6800D125C8 /* SplashViewController.xib in Resources */,
 				2C6862FA28B4DCBE00DAC01B /* Assets.xcassets in Resources */,
 				2C9FC27028B6591100F2A49B /* CalculatorViewController.xib in Resources */,
 				2CA613DF28BA2DB9000D1A62 /* FavoritesViewController.xib in Resources */,
+				2CF0FF8428BBF00700D125C8 /* Screenshot003.png in Resources */,
 				2CF0FF7E28BBDEF400D125C8 /* Demo001.gif in Resources */,
 				2C68631028B4DF9200DAC01B /* CurrenciesListViewController.xib in Resources */,
 			);

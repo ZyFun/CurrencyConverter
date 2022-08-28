@@ -40,5 +40,7 @@
 Clone and run project in Xcode 13 or newer
 
 ## Demo
-<img src="https://github.com/ZyFun/CurrencyConverter/blob/main/Demo/Demo001.gif" width="300" height="650" />
-<img src="https://github.com/ZyFun/CurrencyConverter/blob/main/Demo/Demo000.gif?" width="300" height="650" />
+<img src="https://github.com/ZyFun/CurrencyConverter/blob/main/Demo/Demo001.gif" width="300" height="650" /> <img src="https://github.com/ZyFun/CurrencyConverter/blob/main/Demo/Demo000.gif" width="300" height="650" />
+
+## Screenshots
+<img src="https://github.com/ZyFun/CurrencyConverter/blob/main/Screenshots/Screenshot000.png" width="248" height="538" /> <img src="https://github.com/ZyFun/CurrencyConverter/blob/main/Screenshots/Screenshot001.png" width="248" height="538" /> <img src="https://github.com/ZyFun/CurrencyConverter/blob/main/Screenshots/Screenshot002.png" width="248" height="538" /> <img src="https://github.com/ZyFun/CurrencyConverter/blob/main/Screenshots/Screenshot003.png" width="248" height="538" />
