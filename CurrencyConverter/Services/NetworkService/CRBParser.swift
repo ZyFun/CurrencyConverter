@@ -15,12 +15,12 @@ protocol IParser {
 class CRBParser: XMLParser, IParser {
     typealias Model = CRBApiModel
     
-    var models: [Model]?
-    var currency = ""
-    var charCode = ""
-    var nominal = ""
-    var name = ""
-    var value = ""
+    private var models: [Model]?
+    private var currency = ""
+    private var charCode = ""
+    private var nominal = ""
+    private var name = ""
+    private var value = ""
     
     func parse(data: Data) -> [Model]? {
         models = []
