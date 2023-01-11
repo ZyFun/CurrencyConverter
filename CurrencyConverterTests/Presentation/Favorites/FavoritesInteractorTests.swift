@@ -7,7 +7,7 @@
 
 import XCTest
 
-@testable import CurrencyConverter
+@testable import CurrencyConverterZyFun
 
 final class FavoritesInteractorTests: XCTestCase {
     
@@ -45,6 +45,7 @@ final class FavoritesInteractorTests: XCTestCase {
     
     func testFilterFavoriteSetFavoriteEndAppendToFavoriteArray() {
         // Given
+        let exp = expectation(description: "Ожидание сохранения данных")
         let charCode = "Foo"
         let nominal = "1"
         let name = "Foo"
@@ -58,6 +59,10 @@ final class FavoritesInteractorTests: XCTestCase {
         
         // When
         interactor.userDefaultService?.set(true, for: charCode)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 3)
         interactor.filterFavorite()
         
         // Then

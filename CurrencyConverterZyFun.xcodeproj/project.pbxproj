@@ -69,7 +69,7 @@
 /* Begin PBXFileReference section */
 		2C06766D28BB68B5008B9BDE /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		2C06766F28BB71F2008B9BDE /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
-		2C6862EA28B4DCBD00DAC01B /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C6862EA28B4DCBD00DAC01B /* CurrencyConverterZyFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverterZyFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6862ED28B4DCBD00DAC01B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C6862F928B4DCBE00DAC01B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C6862FC28B4DCBE00DAC01B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		2C68632428B4EC4F00DAC01B /* CurrenciesDataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesDataSourceProvider.swift; sourceTree = "<group>"; };
 		2C6AD3BD28B8EDCA00CEB542 /* CurrencyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyType.swift; sourceTree = "<group>"; };
 		2C6AD3BF28B91C8000CEB542 /* UserDefaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultService.swift; sourceTree = "<group>"; };
-		2C6AD3CB28B94C5800CEB542 /* CurrencyConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C6AD3CB28B94C5800CEB542 /* CurrencyConverterZyFunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyConverterZyFunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6AD3CD28B94C5800CEB542 /* CalculatorInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorInteractorTests.swift; sourceTree = "<group>"; };
 		2C6AD3DA28B94F0D00CEB542 /* CalculatorPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPresenterMock.swift; sourceTree = "<group>"; };
 		2C9FC26D28B6591100F2A49B /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
@@ -161,8 +161,8 @@
 		2C6862EB28B4DCBD00DAC01B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2C6862EA28B4DCBD00DAC01B /* CurrencyConverter.app */,
-				2C6AD3CB28B94C5800CEB542 /* CurrencyConverterTests.xctest */,
+				2C6862EA28B4DCBD00DAC01B /* CurrencyConverterZyFun.app */,
+				2C6AD3CB28B94C5800CEB542 /* CurrencyConverterZyFunTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -396,9 +396,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2C6862E928B4DCBD00DAC01B /* CurrencyConverter */ = {
+		2C6862E928B4DCBD00DAC01B /* CurrencyConverterZyFun */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2C68630128B4DCBF00DAC01B /* Build configuration list for PBXNativeTarget "CurrencyConverter" */;
+			buildConfigurationList = 2C68630128B4DCBF00DAC01B /* Build configuration list for PBXNativeTarget "CurrencyConverterZyFun" */;
 			buildPhases = (
 				2C6862E628B4DCBD00DAC01B /* Sources */,
 				2C6862E728B4DCBD00DAC01B /* Frameworks */,
@@ -408,14 +408,14 @@
 			);
 			dependencies = (
 			);
-			name = CurrencyConverter;
+			name = CurrencyConverterZyFun;
 			productName = CurrencyConverter;
-			productReference = 2C6862EA28B4DCBD00DAC01B /* CurrencyConverter.app */;
+			productReference = 2C6862EA28B4DCBD00DAC01B /* CurrencyConverterZyFun.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2C6AD3CA28B94C5800CEB542 /* CurrencyConverterTests */ = {
+		2C6AD3CA28B94C5800CEB542 /* CurrencyConverterZyFunTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2C6AD3D128B94C5800CEB542 /* Build configuration list for PBXNativeTarget "CurrencyConverterTests" */;
+			buildConfigurationList = 2C6AD3D128B94C5800CEB542 /* Build configuration list for PBXNativeTarget "CurrencyConverterZyFunTests" */;
 			buildPhases = (
 				2C6AD3C728B94C5800CEB542 /* Sources */,
 				2C6AD3C828B94C5800CEB542 /* Frameworks */,
@@ -426,9 +426,9 @@
 			dependencies = (
 				2C6AD3D028B94C5800CEB542 /* PBXTargetDependency */,
 			);
-			name = CurrencyConverterTests;
+			name = CurrencyConverterZyFunTests;
 			productName = CurrencyConverterTests;
-			productReference = 2C6AD3CB28B94C5800CEB542 /* CurrencyConverterTests.xctest */;
+			productReference = 2C6AD3CB28B94C5800CEB542 /* CurrencyConverterZyFunTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -450,7 +450,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2C6862E528B4DCBD00DAC01B /* Build configuration list for PBXProject "CurrencyConverter" */;
+			buildConfigurationList = 2C6862E528B4DCBD00DAC01B /* Build configuration list for PBXProject "CurrencyConverterZyFun" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -463,8 +463,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2C6862E928B4DCBD00DAC01B /* CurrencyConverter */,
-				2C6AD3CA28B94C5800CEB542 /* CurrencyConverterTests */,
+				2C6862E928B4DCBD00DAC01B /* CurrencyConverterZyFun */,
+				2C6AD3CA28B94C5800CEB542 /* CurrencyConverterZyFunTests */,
 			);
 		};
 /* End PBXProject section */
@@ -553,7 +553,7 @@
 /* Begin PBXTargetDependency section */
 		2C6AD3D028B94C5800CEB542 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2C6862E928B4DCBD00DAC01B /* CurrencyConverter */;
+			target = 2C6862E928B4DCBD00DAC01B /* CurrencyConverterZyFun */;
 			targetProxy = 2C6AD3CF28B94C5800CEB542 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -754,7 +754,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CurrencyConverter.app/CurrencyConverter";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CurrencyConverterZyFun.app/CurrencyConverterZyFun";
 			};
 			name = Debug;
 		};
@@ -772,14 +772,14 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CurrencyConverter.app/CurrencyConverter";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CurrencyConverterZyFun.app/CurrencyConverterZyFun";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2C6862E528B4DCBD00DAC01B /* Build configuration list for PBXProject "CurrencyConverter" */ = {
+		2C6862E528B4DCBD00DAC01B /* Build configuration list for PBXProject "CurrencyConverterZyFun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C6862FF28B4DCBF00DAC01B /* Debug */,
@@ -788,7 +788,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2C68630128B4DCBF00DAC01B /* Build configuration list for PBXNativeTarget "CurrencyConverter" */ = {
+		2C68630128B4DCBF00DAC01B /* Build configuration list for PBXNativeTarget "CurrencyConverterZyFun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C68630228B4DCBF00DAC01B /* Debug */,
@@ -797,7 +797,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2C6AD3D128B94C5800CEB542 /* Build configuration list for PBXNativeTarget "CurrencyConverterTests" */ = {
+		2C6AD3D128B94C5800CEB542 /* Build configuration list for PBXNativeTarget "CurrencyConverterZyFunTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C6AD3D228B94C5800CEB542 /* Debug */,

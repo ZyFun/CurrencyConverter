@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import CurrencyConverter
+@testable import CurrencyConverterZyFun
 
 final class CalculatorInteractorTests: XCTestCase {
     

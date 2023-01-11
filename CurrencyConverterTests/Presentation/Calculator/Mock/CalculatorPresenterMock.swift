@@ -5,7 +5,7 @@
 //  Created by Дмитрий Данилин on 26.08.2022.
 //
 
-@testable import CurrencyConverter
+@testable import CurrencyConverterZyFun
 
 final class CalculatorPresenterMock: CalculatorPresentationLogic {
 
